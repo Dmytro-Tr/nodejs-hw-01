@@ -5,7 +5,6 @@ export const writeContacts = async (updatedContacts) => {
   try {
     await fs.writeFile(PATH_DB, JSON.stringify(updatedContacts, null, 2));
   } catch (error) {
-    console.error(error);
-    return error.message;
+    console.error('Write Contacts: ', error);
   }
 };
